@@ -19,8 +19,8 @@ public class SeederService {
         this.tutorRepo = tutorRepo;
     }
 
-    @PostConstruct
-    @Transactional
+//    @PostConstruct
+//    @Transactional
     public void seedData(){
 
         Tutor tutor1 = new Tutor(
