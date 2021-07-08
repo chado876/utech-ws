@@ -31,6 +31,35 @@ public class ModuleController {
         return new ResponseEntity<>(modules, HttpStatus.OK);
     }
 
+    @GetMapping("/modules/{code}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public ResponseEntity<?> getAllModules(@PathVariable String code) {
+
+        Module module;
+        try{
+            module = moduleService.getModuleByCode(code);
+        } catch (Exception ex) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(), ex);
+        }
+
+        return new ResponseEntity<>(module, HttpStatus.OK);
+    }
+
+    @GetMapping("/module")
+    @ResponseStatus(value = HttpStatus.OK)
+    public ResponseEntity<?> getModuleByName(@RequestParam String name) {
+
+        Module module;
+        try{
+            module = moduleService.getModuleByName(name);
+        } catch (Exception ex) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(), ex);
+        }
+
+        return new ResponseEntity<>(module, HttpStatus.OK);
+    }
+
+
 
 
 
