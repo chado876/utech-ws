@@ -59,8 +59,4 @@ public class ModuleController {
         return new ResponseEntity<>(module, HttpStatus.OK);
     }
 
-
-
-
-
 }

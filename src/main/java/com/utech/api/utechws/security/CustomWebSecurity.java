@@ -9,6 +9,8 @@ public class CustomWebSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.cors().and().csrf().disable();
+
         httpSecurity
                 //no authentication needed for these context paths
                 .authorizeRequests()

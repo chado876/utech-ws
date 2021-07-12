@@ -1,0 +1,16 @@
+package com.utech.api.utechws.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ConvoDto {
+    String chatId;
+    String userMessage;
+    String botMessage;
+}
