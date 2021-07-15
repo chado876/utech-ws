@@ -23,4 +23,11 @@ public class ConvoController {
         return new ResponseEntity<>("success",HttpStatus.OK);
     }
 
+    @PostMapping("/lastMessage")
+    @ResponseStatus(value = HttpStatus.OK)
+    public ResponseEntity<?> addConvo(@RequestBody ChatDto chatDto) {
+        String msg = convoService.getMostRecentBotMessage(chatDto.getUserTelegramId());
+        return new ResponseEntity<>(msg,HttpStatus.OK);
+    }
+
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,9 +31,15 @@ public class ConvoService {
                 convoDto.getUserMessage(),
                 convoDto.getBotMessage(),
                 now,
-                chat
+                convoDto.getChatId()
         );
 
         convoRepo.save(convo);
+    }
+
+    public String getMostRecentBotMessage(String chatId){
+        List<Convo> convos = convoRepo.findMostRecentByChatId(chatId);
+        Convo convo = convos.get(0);
+        return convo.getBotMessage();
     }
 }

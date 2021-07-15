@@ -19,8 +19,5 @@ public class Convo extends  UUIDModel {
     private String userMessage;
     private String botMessage;
     private Timestamp dateCreated;
-
-    @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "fk_convo_chat"))
-    private Chat chat;
+    private String chatId;
 }

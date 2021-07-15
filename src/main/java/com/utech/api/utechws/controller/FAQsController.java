@@ -48,4 +48,10 @@ public class FAQsController {
         return new ResponseEntity<>(paymentOptions, HttpStatus.OK);
     }
 
+    @GetMapping("/utechNumber")
+    @ResponseStatus(value = HttpStatus.OK)
+    public ResponseEntity<?> getUtechNumber() {
+        String utechNumber = faQsService.getUtechNumber();
+        return new ResponseEntity<>(utechNumber, HttpStatus.OK);
+    }
 }

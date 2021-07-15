@@ -21,4 +21,9 @@ public class FAQsService {
     public String getPaymentOptions(){
         return "https://www.utech.edu.jm/admissions/enrolment/payment-options";
     }
+
+    public String getUtechNumber(){
+        return "(876) 927-1680";
+    }
+
 }

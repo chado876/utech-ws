@@ -12,9 +12,6 @@ CREATE TABLE convo
     user_message VARCHAR(100000),
     bot_message VARCHAR(100000),
     date_created TIMESTAMP,
-    chat_id UUID,
+    chat_id VARCHAR(1000),
     PRIMARY KEY (id)
 );
-
-ALTER TABLE convo
-    ADD CONSTRAINT fk_convo_chat FOREIGN KEY (chat_id) REFERENCES chat;
